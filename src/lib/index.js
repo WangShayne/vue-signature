@@ -1,7 +1,12 @@
 import vueSignature from './vue-signature.vue'
 
-const signature = { install (Vue, options) { 
-    Vue.component(vueSignature.name, vueSignature)
-} } 
+const signature = {
+    install(Vue, options) {
+        Vue.component(vueSignature.name, vueSignature)
+    }
+}
 
-export default signature 
+if (typeof window !== 'undefined' && window.Vue) {
+    window.Vue.use(signature);
+}
+export default signature

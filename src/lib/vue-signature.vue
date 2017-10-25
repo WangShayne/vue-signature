@@ -12,9 +12,7 @@
 		props:{
 			sigOption: {
 				type:Object,
-				default:{
-					penColor : 'rgb(0, 0, 0)',
-				}
+				default:()=>{penColor : 'rgb(0, 0, 0)'},
 			}
 		},
 		data(){

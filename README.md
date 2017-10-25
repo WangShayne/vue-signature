@@ -8,15 +8,17 @@
 | sigOption     | `Obeject`     | {penColor:"rgb(0, 0, 0)"} |     penColor           |
 
 #### Methods
-| name              |  params       | description  |
-| :-------------:   |:-------------:|:-------------:|
+| name              |  params                                       | description  |
+| :-------------:   |:-------------:                                |:-------------:|
 | save              | (),("image/jpeg"),("image/svg+xml") | save image as PNG/JPEG/SVG |
-| clear     |  | clear canvas |
+| clear               |                                   | clear canvas |
 
 
 ## Usage
 
-``` npm install vue-signature ```
+``` 
+npm install vue-signature 
+```
 
 main.js
 
