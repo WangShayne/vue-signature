@@ -1,18 +1,62 @@
 # vue-signature
 
-> A Vue.js project
+> A electronic signature component by Vue.js
+## API
+#### Props
+| name          |     type      |           default         |       description      |
+|:-------------:|:-------------:|:-------------------------:|   :-----------------:  |
+| sigOption     | `Obeject`     | {penColor:"rgb(0, 0, 0)"} |     penColor           |
 
-## Build Setup
+#### Methods
+| name              |  params       | description  |
+| :-------------:   |:-------------:|:-------------:|
+| save              | (),("image/jpeg"),("image/svg+xml") | save image as PNG/JPEG/SVG |
+| clear     |  | clear canvas |
 
-``` bash
-# install dependencies
-npm install
 
-# serve with hot reload at localhost:8080
-npm run dev
+## Usage
 
-# build for production with minification
-npm run build
+``` npm install vue-signature ```
+
+main.js
+
+```
+import vueSignature from "vue-signature"
+Vue.use(vueSignature)
+```
+A.vue
+
+```
+<template>
+    <vueSignature ref="signature" :sigOption="option"></vueSignature> 
+</template>
+
+<script>
+    export default {
+        name: "app",
+        data() {
+            return {
+                option:{
+                    penColor:"rgb(0, 0, 0)"
+                }
+            };
+        },
+        methods:{
+            save(){
+                var _this = this;
+                var png = _this.$refs.signature.save()
+                var jpeg = _this.$refs.signature.save('image/jpeg')
+                var svg = _this.$refs.signature.save('image/svg+xml');
+                console.log(png);
+                console.log(jpeg)
+                console.log(svg)
+            },
+            clear(){
+                var _this = this;
+                _this.$refs.signature.clear();
+            }
+        }
+    };
+</script>
 ```
 
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
