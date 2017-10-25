@@ -10,7 +10,7 @@
 #### Methods
 | name              |  params                                       | description  |
 | :-------------:   |:-------------:                                |:-------------:|
-| save              | ()|("image/jpeg")|("image/svg+xml") | save image as PNG|JPEG|SVG |
+| save              | ()/("image/jpeg")/("image/svg+xml") | save image as PNG/JPEG/SVG |
 | clear               |                                   | clear canvas |
 
 
