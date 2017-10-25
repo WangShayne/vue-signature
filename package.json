@@ -1,7 +1,7 @@
 {
   "name": "vue-signature",
   "description": "Electronic signature",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "author": "Shayne Wang <1614565666@qq.com>",
   "private": false,
   "license": "MIT",
@@ -10,6 +10,7 @@
     "type": "git",
     "url": "https://github.com/WangShayne/vue-signature"
   },
+  "readme": "README.md",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
