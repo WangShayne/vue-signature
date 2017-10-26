@@ -1,6 +1,10 @@
 # vue-signature
 
 > A electronic signature component by Vue.js
+
+## Reference and Thanks
+[signature_pad](https://github.com/szimek/signature_pad)
+
 ## API
 #### Props
 | name          |     type      |           default         |       description      |
