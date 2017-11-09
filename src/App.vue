@@ -1,6 +1,7 @@
 <template>
 	<div id="app">
 		<vueSignature ref="signature" :sigOption="option"></vueSignature> 
+		<vueSignature ref="signature" :sigOption="option"></vueSignature> 
 		<button @click="save">保存</button>
 		<button @click="clear">清除</button>
 	</div>

@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<canvas id="canvas" class="canvas"></canvas>
+		<canvas :id="uid" class="canvas" :data-uid="uid"></canvas>
 	</div>
 	
 </template>
@@ -17,13 +17,19 @@
 		},
 		data(){
 			return {
-				sig:()=>{}
+				sig:()=>{},
+				uid:""
 			}
+		},
+		created(){
+			var _this = this;
+			console.log(_this)
+			this.uid = "canvas" + _this._uid
 		},
 		methods:{
 			draw(){
 				var _this = this;
-				var canvas = document.getElementById("canvas");
+				var canvas = document.getElementById(_this.uid)
 				_this.sig = new SignaturePad(canvas,_this.sigOption);
 				function isPC() {
 					var userAgentInfo = navigator.userAgent;
