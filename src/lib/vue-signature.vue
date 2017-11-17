@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div :style="{width:w,height:h}">
 		<canvas :id="uid" class="canvas" :data-uid="uid"></canvas>
 	</div>
 	
@@ -13,6 +13,14 @@
 			sigOption: {
 				type:Object,
 				default:()=>{penColor : 'rgb(0, 0, 0)'},
+			},
+			w:{
+				type:String,
+				default:"100%"
+			},
+			h:{
+				type:String,
+				default:"100%"
 			}
 		},
 		data(){
@@ -31,28 +39,11 @@
 				var _this = this;
 				var canvas = document.getElementById(_this.uid)
 				_this.sig = new SignaturePad(canvas,_this.sigOption);
-				function isPC() {
-					var userAgentInfo = navigator.userAgent;
-					var Agents = ["Android", "iPhone",
-								"SymbianOS", "Windows Phone",
-								"iPad", "iPod"];
-					var flag = true;
-					for (var v = 0; v < Agents.length; v++) {
-						if (userAgentInfo.indexOf(Agents[v]) > 0) {
-							flag = false;
-							break;
-						}
-					}
-					return flag;
-				}
 				function resizeCanvas() {
-					if(isPC){
-						canvas.width  = window.innerWidth;
-						canvas.height = window.innerHeight;
-					}else{
-						canvas.width = canvas.offsetWidth;
-						canvas.height = canvas.offsetHeight;
-					}
+					var ratio =  Math.max(window.devicePixelRatio || 1, 1);
+					canvas.width = canvas.offsetWidth * ratio;
+					canvas.height = canvas.offsetHeight * ratio;
+					canvas.getContext("2d").scale(ratio, ratio);
 				}
 				window.addEventListener("resize", resizeCanvas);
 				resizeCanvas();
@@ -77,5 +68,8 @@
 </script>
 
 <style>
-
+	canvas {
+		width: 100%;
+		height: 100%;
+	}
 </style>
