@@ -1,7 +1,7 @@
 import vueSignature from './vue-signature.vue'
 
 const signature = {
-    install(Vue, options) {
+    install: function(Vue, options) {
         Vue.component(vueSignature.name, vueSignature)
     }
 }

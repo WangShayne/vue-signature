@@ -9,10 +9,10 @@ module.exports = {
     publicPath: '/dist/',
     // filename: 'build.js',
     filename:"vue-signature.js",
-    library: 'vue-signature', 
-    libraryTarget: 'umd', 
-    umdNamedDefine: true 
-  
+    library: 'vue-signature',
+    libraryTarget: 'umd',
+    umdNamedDefine: true
+
   },
   module: {
     rules: [

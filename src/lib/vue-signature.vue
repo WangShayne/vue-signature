@@ -2,7 +2,7 @@
 	<div :style="{width:w,height:h}">
 		<canvas :id="uid" class="canvas" :data-uid="uid"></canvas>
 	</div>
-	
+
 </template>
 
 <script>
@@ -31,7 +31,6 @@
 		},
 		created(){
 			var _this = this;
-			console.log(_this)
 			this.uid = "canvas" + _this._uid
 		},
 		methods:{
@@ -58,6 +57,10 @@
 				// signaturePad.toDataURL(); // save image as PNG
 				// signaturePad.toDataURL("image/jpeg"); // save image as JPEG
 				// signaturePad.toDataURL("image/svg+xml"); // save image as SVG
+			},
+			isEmpty(){
+				var _this = this;
+				return _this.sig.isEmpty();
 			}
 		},
 		mounted(){
