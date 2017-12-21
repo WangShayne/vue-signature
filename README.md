@@ -20,8 +20,9 @@
 #### Methods
 | name              |  params                                       | description  |
 | :-------------:   |:-------------:                                |:-------------:|
-| save              | ()/("image/jpeg")/("image/svg+xml") | save image as PNG/JPEG/SVG |
-| clear               |                                   | clear canvas |
+| save              | 			()/("image/jpeg")/("image/svg+xml") | save image as PNG/JPEG/SVG |
+| clear             |                                   			| clear canvas |
+| isEmpty           |                                   			| Returns true if canvas is empty, otherwise returns false |
 
 
 ## Usage
