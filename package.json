@@ -1,7 +1,7 @@
 {
   "name": "vue-signature",
   "description": "Electronic signature",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "author": "Shayne Wang <1614565666@qq.com>",
   "private": false,
   "license": "MIT",

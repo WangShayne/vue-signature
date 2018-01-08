@@ -14,7 +14,7 @@
 | sigOption     | `Obeject`     | {penColor:"rgb(0, 0, 0)"} |     penColor           |
 |        w      | `String`      |         "100%"            |parent container width  |
 |        h      | `String`      |         "100%"            |parent container height |
-
+|  clearOnResize  | `Boolean`     |          false          |Canvas is cleared on window resize|
 
 
 #### Methods

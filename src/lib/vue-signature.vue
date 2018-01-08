@@ -21,6 +21,10 @@
 			h:{
 				type:String,
 				default:"100%"
+			},
+			clearOnResize:{
+				type:Boolean,
+				default:false
 			}
 		},
 		data(){
@@ -39,10 +43,16 @@
 				var canvas = document.getElementById(_this.uid)
 				_this.sig = new SignaturePad(canvas,_this.sigOption);
 				function resizeCanvas() {
+					var url;
+					if(!_this.isEmpty()){
+						url = _this.save();
+					}
+					_this.clear();
 					var ratio =  Math.max(window.devicePixelRatio || 1, 1);
 					canvas.width = canvas.offsetWidth * ratio;
 					canvas.height = canvas.offsetHeight * ratio;
 					canvas.getContext("2d").scale(ratio, ratio);
+					!_this.clearOnResize && _this.fromDataURL(url)
 				}
 				window.addEventListener("resize", resizeCanvas);
 				resizeCanvas();
@@ -57,6 +67,10 @@
 				// signaturePad.toDataURL(); // save image as PNG
 				// signaturePad.toDataURL("image/jpeg"); // save image as JPEG
 				// signaturePad.toDataURL("image/svg+xml"); // save image as SVG
+			},
+			fromDataURL(url){
+				var _this = this;
+				_this.sig.fromDataURL(url)
 			},
 			isEmpty(){
 				var _this = this;
