@@ -12,7 +12,12 @@
 		props:{
 			sigOption: {
 				type:Object,
-				default:()=>{penColor : 'rgb(0, 0, 0)'},
+				default:()=>{
+					return {
+						backgroundColor:'rgb(255,255,255)',
+						penColor : 'rgb(0, 0, 0)'
+					}
+				},
 			},
 			w:{
 				type:String,
@@ -47,11 +52,11 @@
 					if(!_this.isEmpty()){
 						url = _this.save();
 					}
-					_this.clear();
 					var ratio =  Math.max(window.devicePixelRatio || 1, 1);
 					canvas.width = canvas.offsetWidth * ratio;
 					canvas.height = canvas.offsetHeight * ratio;
 					canvas.getContext("2d").scale(ratio, ratio);
+					_this.clear();
 					!_this.clearOnResize && _this.fromDataURL(url)
 				}
 				window.addEventListener("resize", resizeCanvas);
