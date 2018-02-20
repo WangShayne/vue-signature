@@ -35,18 +35,26 @@
 		data(){
 			return {
 				sig:()=>{},
+				option:{
+					backgroundColor:'rgb(255,255,255)',
+					penColor : 'rgb(0, 0, 0)'
+				},
 				uid:""
 			}
 		},
 		created(){
 			var _this = this;
 			this.uid = "canvas" + _this._uid
+			var sigOptions = Object.keys(_this.sigOption);
+			for(var item of sigOptions){
+				_this.option[item] = _this.sigOption[item]
+			}
 		},
 		methods:{
 			draw(){
 				var _this = this;
 				var canvas = document.getElementById(_this.uid)
-				_this.sig = new SignaturePad(canvas,_this.sigOption);
+				_this.sig = new SignaturePad(canvas,_this.option);
 				function resizeCanvas() {
 					var url;
 					if(!_this.isEmpty()){
