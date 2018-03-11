@@ -92,7 +92,9 @@
 		},
 		mounted(){
 			var _this = this;
-			_this.draw()
+			this.$nextTick(() => {
+				_this.draw()
+			});
 		}
 	}
 </script>
