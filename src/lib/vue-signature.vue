@@ -65,7 +65,7 @@
 					canvas.height = canvas.offsetHeight * ratio;
 					canvas.getContext("2d").scale(ratio, ratio);
 					_this.clear();
-					!_this.clearOnResize && _this.fromDataURL(url)
+					!_this.clearOnResize && url !== undefined && _this.fromDataURL(url)
 				}
 				window.addEventListener("resize", resizeCanvas);
 				resizeCanvas();
