@@ -88,6 +88,14 @@
 			isEmpty(){
 				var _this = this;
 				return _this.sig.isEmpty();
+			},
+			undo(){
+				var _this = this;
+				var data = _this.sig.toData();
+				if(data){
+					data.pop()
+					_this.sig.fromData(data);
+				}
 			}
 		},
 		mounted(){

@@ -2,10 +2,13 @@
 
 > A electronic signature component by Vue.js
 
-## Reference and Thanks
+
+
+## Reference and Thanks
 [signature_pad](https://github.com/szimek/signature_pad)
 
 ## API
+---
 #### Props
 > w,h need units,like 100px or 100%
 
@@ -23,9 +26,11 @@
 | save              | 			()/("image/jpeg")/("image/svg+xml") | save image as PNG/JPEG/SVG |
 | clear             |                                   			| clear canvas |
 | isEmpty           |                                   			| Returns true if canvas is empty, otherwise returns false |
+| undo             |                                   			| remove the last dot or line |
 
 
 ## Usage
+---
 
 ``` 
 npm install vue-signature 
@@ -44,8 +49,9 @@ A.vue
 	<div id="app">
 		<vueSignature ref="signature" :sigOption="option" :w="'800px'" :h="'400px'"></vueSignature> 
 		<vueSignature ref="signature1" :sigOption="option"></vueSignature> 
-		<button @click="save">保存</button>
-		<button @click="clear">清除</button>
+		<button @click="save">Save</button>
+		<button @click="clear">Clear</button>
+		<button @click="undo">Undo</button>
 	</div>
 </template>
 
@@ -72,9 +78,17 @@ export default {
 		clear(){
 			var _this = this;
 			_this.$refs.signature.clear();
+		},
+		undo(){
+			var _this = this;
+			_this.$refs.signature.undo();
 		}
 	}
 };
 </script>
 ```
 
+
+## License
+---
+Released under the [MIT License](https://opensource.org/licenses/MIT).
