@@ -12,9 +12,9 @@
 #### Props
 > w,h need units,like 100px or 100%
 
-| name          |     type      |           default         |       description      |
-|:-------------:|:-------------:|:-------------------------:|   :-----------------:  |
-| sigOption     | `Obeject`     | {penColor:"rgb(0, 0, 0)"} |     penColor           |
+| name          |     type      |           default         |       description             |
+|:-------------:|:-------------:|:-------------------------:|   :-----------------:         |
+| sigOption     | `Obeject`     | {penColor:"rgb(0, 0, 0)", backgroundColor:"rgb(255,255,255)"} |     penColor, backgroundColor  |
 |        w      | `String`      |         "100%"            |parent container width  |
 |        h      | `String`      |         "100%"            |parent container height |
 |  clearOnResize  | `Boolean`     |          false          |Canvas is cleared on window resize|
