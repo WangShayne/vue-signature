@@ -105,7 +105,7 @@
 					var vCanvas = document.getElementById(_this.uid);
 
 					var textData = {
-							text:data.text,
+							text:data.text || '',
 							x:data.x || 20,
 							y:data.y || 20,
 							sx:data.sx || 40,
@@ -124,7 +124,7 @@
 						}else{
 							ctx.fillText(textData.text,textData.x,textData.y);
 						}
-						
+
 					_this.sig._isEmpty = false
 				}
 			}
