@@ -88,10 +88,10 @@ export default {
 		},
 		addWaterMark(){
 			var _this = this;
-			_this.$refs.signature.undo({
+			_this.$refs.signature.addWaterMark({
 				text:"mark text",          // watermark text, > default ''
 				font:"20px Arial",         // mark font, > default '20px sans-serif'
-				style:'all',               // fillText and strokeText, 'all'/'stroke'/'fill', > default 'fill		
+				style:'all',               // fillText and strokeText,  'all'/'stroke'/'fill', > default 'fill		
 				fillStyle:"red",           // fillcolor, > default '#333' 
 				strokeStyle:"blue",	   // strokecolor, > default '#333'	
 				x:100,                     // fill positionX, > default 20
