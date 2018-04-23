@@ -27,6 +27,7 @@
 | clear             |                                   			| clear canvas |
 | isEmpty           |                                   			| Returns true if canvas is empty, otherwise returns false |
 | undo             |                                   			| remove the last dot or line |
+| addWaterMark      |           {} // check Usage addWaterMark    | addWaterMark
 
 
 ## Usage
@@ -52,6 +53,7 @@ A.vue
 		<button @click="save">Save</button>
 		<button @click="clear">Clear</button>
 		<button @click="undo">Undo</button>
+		<button @click="addWaterMark">addWaterMark</button>
 	</div>
 </template>
 
@@ -83,6 +85,20 @@ export default {
 		undo(){
 			var _this = this;
 			_this.$refs.signature.undo();
+		},
+		addWaterMark(){
+			var _this = this;
+			_this.$refs.signature.undo({
+				text:"mark text",          // watermark text, > default ''
+				font:"20px Arial",         // mark font, > default '20px sans-serif'
+				style:'all',               // fillText and strokeText, 'all'/'stroke'/'fill', > default 'fill		
+				fillStyle:"red",           // fillcolor, > default '#333' 
+				strokeStyle:"blue",	   // strokecolor, > default '#333'	
+				x:100,                     // fill positionX, > default 20
+				y:200,                     // fill positionY, > default 20				
+				sx:100,                    // stroke positionX, > default 40
+				sy:200                     // stroke positionY, > default 40
+			});
 		}
 	}
 };

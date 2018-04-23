@@ -96,6 +96,37 @@
 					data.pop()
 					_this.sig.fromData(data);
 				}
+			},
+			addWaterMark(data){
+				var _this = this;
+				if(!(Object.prototype.toString.call(data) == '[object Object]')){
+					throw new Error("Expected Object, got "+typeof data+".")
+				}else{
+					var vCanvas = document.getElementById(_this.uid);
+
+					var textData = {
+							text:data.text,
+							x:data.x || 20,
+							y:data.y || 20,
+							sx:data.sx || 40,
+							sy:data.sy || 40
+						}
+						
+					var ctx = vCanvas.getContext('2d');
+						ctx.font = data.font || '20px sans-serif';
+						ctx.fillStyle = data.fillStyle || "#333";
+						ctx.strokeStyle = data.strokeStyle || "#333";    
+    					if(data.style == 'all'){
+							ctx.fillText(textData.text,textData.x,textData.y);
+							ctx.strokeText(textData.text,textData.sx,textData.sx);
+						}else if(data.style == 'stroke'){
+							ctx.strokeText(textData.text,textData.sx,textData.sx);
+						}else{
+							ctx.fillText(textData.text,textData.x,textData.y);
+						}
+						
+					_this.sig._isEmpty = false
+				}
 			}
 		},
 		mounted(){
