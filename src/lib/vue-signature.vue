@@ -127,7 +127,12 @@
 
 					_this.sig._isEmpty = false
 				}
+			},
+			fromDataURL(url){
+				var _this = this;
+				_this.sig.fromData(url);
 			}
+
 		},
 		mounted(){
 			var _this = this;

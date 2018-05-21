@@ -28,6 +28,7 @@
 | isEmpty           |                                   			| Returns true if canvas is empty, otherwise returns false |
 | undo             |                                   			| remove the last dot or line |
 | addWaterMark      |           {} // check Usage addWaterMark    | addWaterMark
+| fromDataURL      |          (url)    | Draws signature image from data URL.
 
 
 ## Usage
@@ -99,6 +100,10 @@ export default {
 				sx:100,                    // stroke positionX, > default 40
 				sy:200                     // stroke positionY, > default 40
 			});
+		},
+		fromDataURL(url){
+			var _this = this;
+			_this.$refs.signature.fromDataURL("data:image/png;base64,iVBORw0K...");
 		}
 	}
 };
