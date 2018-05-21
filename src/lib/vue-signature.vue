@@ -130,7 +130,7 @@
 			},
 			fromDataURL(url){
 				var _this = this;
-				_this.sig.fromData(url);
+				_this.sig.fromDataURL(url);
 			}
 
 		},
