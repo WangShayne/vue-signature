@@ -14,10 +14,11 @@
 
 | name          |     type      |           default         |       description             |
 |:-------------:|:-------------:|:-------------------------:|   :-----------------:         |
-| sigOption     | `Obeject`     | {penColor:"rgb(0, 0, 0)", backgroundColor:"rgb(255,255,255)"} |     penColor, backgroundColor  |
+| sigOption     | `Object`     | {penColor:"rgb(0, 0, 0)", backgroundColor:"rgb(255,255,255)"} |     penColor, backgroundColor  |
 |        w      | `String`      |         "100%"            |parent container width  |
 |        h      | `String`      |         "100%"            |parent container height |
 |  clearOnResize  | `Boolean`     |          false          |Canvas is cleared on window resize|
+|  waterMark  | `Object`     |          {}          |check Usage addWaterMark |
 
 
 #### Methods
