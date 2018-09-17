@@ -72,7 +72,7 @@
 					canvas.getContext("2d").scale(ratio, ratio);
 					_this.clear();
 					!_this.clearOnResize && url !== undefined && _this.fromDataURL(url)
-					_this.addWaterMark(_this.waterMark)
+					Object.keys(_this.waterMark).length && _this.addWaterMark(_this.waterMark)
 				}
 				window.addEventListener("resize", resizeCanvas);
 				resizeCanvas();
