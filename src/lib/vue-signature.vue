@@ -77,7 +77,7 @@
 				window.addEventListener("resize", resizeCanvas);
 				setTimeout(() => {
 					resizeCanvas();
-				}, 50);
+				}, 100);
 			},
 			clear(){
 				var _this = this;
