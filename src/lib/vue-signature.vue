@@ -75,7 +75,9 @@
 					Object.keys(_this.waterMark).length && _this.addWaterMark(_this.waterMark)
 				}
 				window.addEventListener("resize", resizeCanvas);
-				resizeCanvas();
+				setTimeout(() => {
+					resizeCanvas();
+				}, 100);
 			},
 			clear(){
 				var _this = this;
