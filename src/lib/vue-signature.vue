@@ -75,9 +75,7 @@
 					Object.keys(_this.waterMark).length && _this.addWaterMark(_this.waterMark)
 				}
 				window.addEventListener("resize", resizeCanvas);
-				setTimeout(() => {
-					resizeCanvas();
-				}, 100);
+				resizeCanvas();
 			},
 			clear(){
 				var _this = this;
@@ -140,7 +138,7 @@
 		},
 		mounted(){
 			var _this = this;
-			this.$nextTick(() => {
+			this.$nextTick().then(() => {
 				_this.draw()
 			});
 		}
