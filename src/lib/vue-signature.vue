@@ -1,6 +1,6 @@
 <template>
-	<div :style="{width:w,height:h}">
-		<canvas :id="uid" class="canvas" :data-uid="uid"></canvas>
+	<div :style="{width:w,height:h}" @touchmove.prevent>
+		<canvas :id="uid" class="canvas" :data-uid="uid" :disabled="disabled"></canvas>
 	</div>
 
 </template>
@@ -36,6 +36,10 @@
 				default:()=>{
 					return {}
 				}
+			},
+			disabled:{
+				type:Boolean,
+				default:false
 			}
 		},
 		data(){
@@ -46,6 +50,16 @@
 					penColor : 'rgb(0, 0, 0)'
 				},
 				uid:""
+			}
+		},
+		watch:{
+			disabled(val){
+				var _this = this
+				if (val) {
+					_this.sig.off()
+				} else {
+					_this.sig.on()
+				}
 			}
 		},
 		created(){

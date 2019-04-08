@@ -19,6 +19,7 @@
 |        h      | `String`      |         "100%"            |parent container height |
 |  clearOnResize  | `Boolean`     |          false          |Canvas is cleared on window resize|
 |  waterMark  | `Object`     |          {}          |check Usage addWaterMark |
+|  disabled  | `Boolean`     |          false          |disabled |
 
 
 #### Methods
@@ -50,12 +51,13 @@ A.vue
 ```
 <template>
 	<div id="app">
-		<vueSignature ref="signature" :sigOption="option" :w="'800px'" :h="'400px'"></vueSignature> 
+		<vueSignature ref="signature" :sigOption="option" :w="'800px'" :h="'400px'" :disabled="disabled"></vueSignature> 
 		<vueSignature ref="signature1" :sigOption="option"></vueSignature> 
 		<button @click="save">Save</button>
 		<button @click="clear">Clear</button>
 		<button @click="undo">Undo</button>
 		<button @click="addWaterMark">addWaterMark</button>
+		<button @click="handleDisabled">disabled</button>
 	</div>
 </template>
 
@@ -67,7 +69,8 @@ export default {
 			option:{
 				penColor:"rgb(0, 0, 0)",
 				backgroundColor:"rgb(255,255,255)"
-			}
+			},
+			disabled:false
 		};
 	},
 	methods:{
@@ -105,6 +108,10 @@ export default {
 		fromDataURL(url){
 			var _this = this;
 			_this.$refs.signature.fromDataURL("data:image/png;base64,iVBORw0K...");
+		},
+		handleDisabled(){
+			var _this = this;
+			_this.disabled  = !_this.disabled
 		}
 	}
 };
