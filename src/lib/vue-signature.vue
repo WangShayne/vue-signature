@@ -40,6 +40,10 @@
 			disabled:{
 				type:Boolean,
 				default:false
+			},
+			defaultUrl:{
+				type:String,
+				default:""
 			}
 		},
 		data(){
@@ -90,6 +94,10 @@
 				}
 				window.addEventListener("resize", resizeCanvas);
 				resizeCanvas();
+
+				if (_this.defaultUrl !== ""){
+					_this.fromDataURL(_this.defaultUrl)
+				}
 			},
 			clear(){
 				var _this = this;

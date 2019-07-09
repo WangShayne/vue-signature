@@ -20,7 +20,7 @@
 |  clearOnResize  | `Boolean`     |          false          |Canvas is cleared on window resize|
 |  waterMark  | `Object`     |          {}          |check Usage addWaterMark |
 |  disabled  | `Boolean`     |          false          |disabled |
-
+|  defaultUrl  | `String`     |          ""          |you want show image by default |
 
 #### Methods
 | name              |  params                                       | description  |
@@ -51,7 +51,7 @@ A.vue
 ```
 <template>
 	<div id="app">
-		<vueSignature ref="signature" :sigOption="option" :w="'800px'" :h="'400px'" :disabled="disabled"></vueSignature> 
+		<vueSignature ref="signature" :sigOption="option" :w="'800px'" :h="'400px'" :disabled="disabled" :defaultUrl="dataUrl"></vueSignature> 
 		<vueSignature ref="signature1" :sigOption="option"></vueSignature> 
 		<button @click="save">Save</button>
 		<button @click="clear">Clear</button>
@@ -70,7 +70,8 @@ export default {
 				penColor:"rgb(0, 0, 0)",
 				backgroundColor:"rgb(255,255,255)"
 			},
-			disabled:false
+			disabled:false,
+			dataUrl:"https://avatars2.githubusercontent.com/u/17644818?s=460&v=4"
 		};
 	},
 	methods:{
