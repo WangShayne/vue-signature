@@ -96,7 +96,13 @@
 				resizeCanvas();
 
 				if (_this.defaultUrl !== ""){
-					_this.fromDataURL(_this.defaultUrl)
+					_this.fromDataURL(_this.defaultUrl);
+				}
+
+				if (_this.disabled) {
+					_this.sig.off();
+				} else {
+					_this.sig.on();
 				}
 			},
 			clear(){
