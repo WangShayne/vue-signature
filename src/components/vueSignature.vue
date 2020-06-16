@@ -2,7 +2,6 @@
 	<div :style="{width:w,height:h}" @touchmove.prevent>
 		<canvas :id="uid" class="canvas" :data-uid="uid" :disabled="disabled"></canvas>
 	</div>
-
 </template>
 
 <script>
