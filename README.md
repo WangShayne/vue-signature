@@ -40,15 +40,10 @@
 npm install vue-signature 
 ```
 
-main.js
 
-```
-import vueSignature from "vue-signature"
-Vue.use(vueSignature)
-```
 A.vue
 
-```
+```vue
 <template>
 	<div id="app">
 		<vueSignature ref="signature" :sigOption="option" :w="'800px'" :h="'400px'" :disabled="disabled" :defaultUrl="dataUrl"></vueSignature> 
@@ -62,8 +57,12 @@ A.vue
 </template>
 
 <script>
+import vueSignarture from "vue-signature"
 export default {
 	name: "app",
+	components:{
+		vueSignarture
+	},
 	data() {
 		return {
 			option:{
