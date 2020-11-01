@@ -57,11 +57,11 @@ A.vue
 </template>
 
 <script>
-import vueSignarture from "vue-signature"
+import vueSignature from "vue-signature"
 export default {
 	name: "app",
 	components:{
-		vueSignarture
+		vueSignature
 	},
 	data() {
 		return {
