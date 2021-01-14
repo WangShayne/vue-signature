@@ -78,21 +78,22 @@
 				var _this = this;
 				var canvas = document.getElementById(_this.uid)
 				_this.sig = new SignaturePad(canvas,_this.option);
-				function resizeCanvas() {
+				
+				function resizeCanvas(c) {
 					var url;
 					if(!_this.isEmpty()){
 						url = _this.save();
 					}
 					var ratio =  Math.max(window.devicePixelRatio || 1, 1);
-					canvas.width = canvas.offsetWidth * ratio;
-					canvas.height = canvas.offsetHeight * ratio;
-					canvas.getContext("2d").scale(ratio, ratio);
+					c.width = c.offsetWidth * ratio;
+					c.height = c.offsetHeight * ratio;
+					c.getContext("2d").scale(ratio, ratio);
 					_this.clear();
 					!_this.clearOnResize && url !== undefined && _this.fromDataURL(url)
 					Object.keys(_this.waterMark).length && _this.addWaterMark(_this.waterMark)
 				}
-				window.addEventListener("resize", resizeCanvas);
-				resizeCanvas();
+				window.addEventListener("resize", resizeCanvas(canvas));
+				resizeCanvas(canvas);
 
 				if (_this.defaultUrl !== ""){
 					_this.fromDataURL(_this.defaultUrl);
