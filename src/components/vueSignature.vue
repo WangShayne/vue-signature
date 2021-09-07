@@ -85,8 +85,8 @@
 						url = _this.save();
 					}
 					var ratio =  Math.max(window.devicePixelRatio || 1, 1);
-					c.width = c.offsetWidth * ratio;
-					c.height = c.offsetHeight * ratio;
+					c.width = w.replace(/px|%/g,"") * ratio;
+    				c.height = h.replace(/px|%/g,"") * ratio;
 					c.getContext("2d").scale(ratio, ratio);
 					_this.clear();
 					!_this.clearOnResize && url !== undefined && _this.fromDataURL(url)
