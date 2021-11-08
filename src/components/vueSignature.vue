@@ -58,10 +58,12 @@
 		watch:{
 			disabled(val){
 				var _this = this
-				if (val) {
-					_this.sig.off()
-				} else {
-					_this.sig.on()
+				if (_this.sig.off) {
+					if (val) {
+						_this.sig.off()
+					} else {
+						_this.sig.on()
+					}
 				}
 			}
 		},
