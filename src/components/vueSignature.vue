@@ -156,9 +156,9 @@ export default {
 				ctx.strokeStyle = data.strokeStyle || "#333";
 				if (data.style == 'all') {
 					ctx.fillText(textData.text, textData.x, textData.y);
-					ctx.strokeText(textData.text, textData.sx, textData.sx);
+					ctx.strokeText(textData.text, textData.sx, textData.sy);
 				} else if (data.style == 'stroke') {
-					ctx.strokeText(textData.text, textData.sx, textData.sx);
+					ctx.strokeText(textData.text, textData.sx, textData.sy);
 				} else {
 					ctx.fillText(textData.text, textData.x, textData.y);
 				}
