@@ -80,6 +80,7 @@ export default {
 			var _this = this;
 			var canvas = document.getElementById(_this.uid)
 			_this.sig = new SignaturePad(canvas, _this.option);
+			_this.attachEventListeners();
 
 			function resizeCanvas(c) {
 				var url;
@@ -165,6 +166,14 @@ export default {
 
 				_this.sig._isEmpty = false
 			}
+		},
+		attachEventListeners() {
+			var _this = this;
+
+			_this.sig.addEventListener('beginStroke', event => _this.$emit('beginStroke', event))
+			_this.sig.addEventListener('endStroke', event => _this.$emit('endStroke', event))
+			_this.sig.addEventListener('beforeUpdateStroke', event => _this.$emit('beforeUpdateStroke', event))
+			_this.sig.addEventListener('afterUpdateStroke', event => _this.$emit('afterUpdateStroke', event))
 		}
 	},
 	mounted() {
