@@ -33,6 +33,12 @@
 | addWaterMark      |           {} // check Usage addWaterMark    | addWaterMark
 | fromDataURL      |          (url)    | Draws signature image from data URL.
 
+#### Events
+The components emits the following events:
+`beginStroke` - Triggered before stroke begins.
+`endStroke` - Triggered after stroke ends.
+`beforeUpdateStroke` - Triggered before stroke update.
+`afterUpdateStroke` - Triggered after stroke update.
 
 ## Usage
 ---

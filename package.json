@@ -16,7 +16,7 @@
     "build": "webpack -p"
   },
   "dependencies": {
-    "signature_pad": "^3.0.0-beta.3",
+    "signature_pad": "^4.1.5",
     "vue": "^2.5.9"
   },
   "devDependencies": {
@@ -26,7 +26,7 @@
     "cross-env": "^5.1.1",
     "css-loader": "^0.28.7",
     "file-loader": "^1.1.5",
-    "node-sass": "^4.7.2",
+    "node-sass": "^8.0.0",
     "sass-loader": "^6.0.6",
     "vue-loader": "^13.5.0",
     "vue-template-compiler": "^2.5.9",
