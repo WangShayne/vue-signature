@@ -69,7 +69,7 @@ export default {
 	},
 	created() {
 		var _this = this;
-		this.uid = "canvas" + _this._uid
+		this.uid = "canvas" + Math.random();
 		var sigOptions = Object.keys(_this.sigOption);
 		for (var item of sigOptions) {
 			_this.option[item] = _this.sigOption[item]
